@@ -14,13 +14,13 @@ enum WinStateNames {
     lose = -1,
     royalFlush = 0,
     straightFlush = 1,
-    fourKind = 2,
-    fullHouse = 3,
-    flush = 4,
-    straight = 5,
-    threeKind = 6,
-    twoPair = 7,
-    pairJacksUp = 8
+//    fourKind = 2,
+//    fullHouse = 3,
+    flush = 2,
+    straight = 3,
+//    threeKind = 6,
+//    twoPair = 7,
+//    pairJacksUp = 8
 };
 
 class WinState {

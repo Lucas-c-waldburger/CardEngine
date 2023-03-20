@@ -6,7 +6,7 @@
 
 WinState::WinState(Hand& hand) {
     this->hand = &hand;
-    numOfStates = 9;
+    numOfStates = 4;
 //    isRoyalFlush = checkRoyalFlush();
 //    isStraightFlush = checkStraightFlush();
 //    isFourKind = checkFourKind();
@@ -19,13 +19,13 @@ WinState::WinState(Hand& hand) {
 
     states.push_back(checkRoyalFlush());
     states.push_back(checkStraightFlush());
-    states.push_back(checkFourKind());
-    states.push_back(checkFullHouse());
+//    states.push_back(checkFourKind());
+//    states.push_back(checkFullHouse());
     states.push_back(checkFlush());
     states.push_back(checkStraight());
-    states.push_back(checkThreeKind());
-    states.push_back(checkTwoPair());
-    states.push_back(checkPairJacksUp());
+//    states.push_back(checkThreeKind());
+//    states.push_back(checkTwoPair());
+//    states.push_back(checkPairJacksUp());
 }
 
 

@@ -14,8 +14,10 @@ public:
     Deck* parentDeck;
     DiscardPile* parentDiscardPile;
 
-    void draw(int numCards);
+    void draw(int numCards = 1);
+    void drawSpecific(int value, int suit);
     void drawTilFull();
+    void discard(int value, int suit);
 
 };
 
