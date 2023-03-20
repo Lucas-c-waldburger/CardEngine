@@ -18,6 +18,8 @@ public:
     void drawSpecific(int value, int suit);
     void drawTilFull();
     void discard(int value, int suit);
+    void discardRand(int numCards = 1);
+    void replaceInPlace(int value, int suit);
 
 };
 

@@ -71,7 +71,9 @@ void CardGroup::orderByValue() {
 }
 
 void CardGroup::print() {
-    for (int i = 0; i < getCurrentSize(); i++) {
+    int size = getCurrentSize();
+    std::cout << size;
+    for (int i = 0; i < size; i++) {
         std::cout << *cards[i] << '\n';
     }
 }
