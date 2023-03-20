@@ -47,3 +47,11 @@
 19	1153	7009744766143408	CMakeFiles/CardEngine.dir/Deck.cpp.obj	f496a72cdd8aed32
 29	1166	7009744766263516	CMakeFiles/CardEngine.dir/CardGroup.cpp.obj	56504f27b7112659
 1166	1334	7009744767915020	CardEngine.exe	1f79ba2350e902b9
+3	897	7009806273910644	CMakeFiles/CardEngine.dir/Card.cpp.obj	2aade65314f76f5c
+22	958	7009806274541219	CMakeFiles/CardEngine.dir/CardArt.cpp.obj	bc4c5d76a47fa24b
+9	1210	7009806277043493	CMakeFiles/CardEngine.dir/main.cpp.obj	35ab25b929ec6e1f
+13	1225	7009806277213644	CMakeFiles/CardEngine.dir/Deck.cpp.obj	f496a72cdd8aed32
+27	1248	7009806277443853	CMakeFiles/CardEngine.dir/Hand.cpp.obj	75cf5b472c323599
+18	1256	7009806277523938	CMakeFiles/CardEngine.dir/WinState.cpp.obj	7f5a730f85ea21a9
+32	1260	7009806277573974	CMakeFiles/CardEngine.dir/CardGroup.cpp.obj	56504f27b7112659
+40	1261	7009806277583983	CMakeFiles/CardEngine.dir/DiscardPile.cpp.obj	bfba551d61c85ba9

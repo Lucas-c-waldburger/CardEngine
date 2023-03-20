@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Deck.h"
 #include "Hand.h"
+#include "WinState.h"
 
 int main() {
     CardArt cardArt;
@@ -10,8 +11,8 @@ int main() {
 //    Hand player2Hand(5, deck);
 
     p1Hand.print();
-    p1Hand.shuffle();
-    p1Hand.print();
+    WinState winState(p1Hand);
+    std::cout << winState.getState();
 
     return 0;
 }
