@@ -70,6 +70,25 @@ void CardGroup::orderByValue() {
     }
 }
 
+void CardGroup::orderByBoth() {
+    orderBySuit();
+    int incrementAmount = getStartingSize() / NUM_OF_SUITS;
+    int startingpos = 0;
+    int endingpos = incrementAmount;
+
+    for (int i = 0; i < NUM_OF_SUITS; i++) {
+        for (int s = 0; s < incrementAmount; s++) {
+            for (int c = startingpos; c < endingpos - 1; c++) {
+                if (cards[c]->getValue() > cards[c + 1]->getValue()) {
+                    std::swap(cards[c], cards[c + 1]);
+                }
+            }
+        }
+        startingpos += incrementAmount;
+        endingpos += incrementAmount;
+    }
+}
+
 void CardGroup::print() {
     int size = getCurrentSize();
     for (int i = 0; i < size; i++) {

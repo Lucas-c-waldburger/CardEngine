@@ -9,9 +9,10 @@ DiscardPile::DiscardPile(int maxSize, Deck& deck) : CardGroup(maxSize) {
 }
 
 void DiscardPile::shuffleBackIntoDeck() {
-    for (int i = 0; i < this->getCurrentSize(); i ++) {
+    int size = getCurrentSize();
+    for (int i = 0; i < size; i++) {
         parentDeck->cards.emplace_back(std::move(this->cards.back()));
-        this->cards.erase(this->cards.end());
+        this->cards.pop_back();
     }
     parentDeck->shuffle();
 }

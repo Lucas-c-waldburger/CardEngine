@@ -27,6 +27,7 @@ public:
 
     void orderBySuit();
     void orderByValue();
+    void orderByBoth();
 
     void print();
 

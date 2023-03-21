@@ -25,10 +25,10 @@ enum WinStateNames {
 
 class WinState {
 public:
-    WinState(Hand& hand);
+    WinState() = default;
+    explicit WinState(Hand& hand);
 
     Hand* hand;
-    std::vector<int> cardValues;
 
     bool checkFlush();
     bool checkStraight();
@@ -39,6 +39,8 @@ public:
     int getState();
 
 private:
+    std::vector<int> cardValues;
+
 };
 
 
