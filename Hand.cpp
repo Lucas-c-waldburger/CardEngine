@@ -15,9 +15,9 @@ Hand::Hand(int maxSize, Deck& deck, DiscardPile& discardPile, int value1, int va
     this->parentDiscardPile = &discardPile;
     drawSpecific(value2, 0);
     drawSpecific(value1, 0);
-    drawSpecific(value2, 1);
-    drawSpecific(value1, 2);
-    drawSpecific(value1, 3);
+    drawSpecific(5, 0);
+    drawSpecific(9, 0);
+    drawSpecific(11, 0);
 
 }
 
