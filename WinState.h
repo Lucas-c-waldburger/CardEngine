@@ -28,6 +28,7 @@ public:
     WinState(Hand& hand);
 
     Hand* hand;
+    std::vector<int> cardValues;
 
     bool checkRoyalFlush();
     bool checkStraightFlush();
@@ -37,7 +38,7 @@ public:
     bool checkStraight();
     bool checkThreeKind();
     bool checkTwoPair();
-    bool checkPairJacksUp();
+    void checkPairJacksUp();
 
 
     int getState();

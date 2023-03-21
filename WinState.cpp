@@ -4,8 +4,15 @@
 
 #include "WinState.h"
 
-WinState::WinState(Hand& hand) {
-    this->hand = &hand;
+WinState::WinState(Hand& hand) : hand{&hand} {
+
+//    this->hand = &hand;
+
+    std::vector<int> cardValues;
+    for (std::unique_ptr<Card> &card: hand.cards) {
+        cardValues.push_back(card->getValue());
+    }
+
     numOfStates = 4;
 //    isRoyalFlush = checkRoyalFlush();
 //    isStraightFlush = checkStraightFlush();
@@ -61,6 +68,21 @@ bool WinState::checkRoyalFlush() {
     }
     return false;
 }
+//
+//void WinState::checkPairJacksUp() {
+//    auto it = std::adjacent_find(hand->cards.begin(), hand->cards.end());
+//
+//    if (it == hand->cards.end()) {
+//        isPairJacksUp = false;
+//        isThreeKind = false;
+//        isFourKind = false;
+//        isFullHouse = false;
+//    }
+//    else {
+//
+//    }
+//
+//}
 
 int WinState::getState() {
     for (int i = 0; i < numOfStates; i++) {

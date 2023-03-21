@@ -10,6 +10,7 @@
 class Hand : public CardGroup {
 public:
     Hand(int maxSize, Deck& deck, DiscardPile& discardPile);
+    Hand(int maxSize, Deck& deck, DiscardPile& discardPile, int value1, int value2);
 
     Deck* parentDeck;
     DiscardPile* parentDiscardPile;

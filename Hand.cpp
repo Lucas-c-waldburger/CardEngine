@@ -10,6 +10,18 @@ Hand::Hand(int maxSize, Deck& deck, DiscardPile& discardPile) : CardGroup(maxSiz
     drawTilFull();
 }
 
+Hand::Hand(int maxSize, Deck& deck, DiscardPile& discardPile, int value1, int value2) : CardGroup(maxSize) {
+    this->parentDeck = &deck;
+    this->parentDiscardPile = &discardPile;
+    drawSpecific(value2, 0);
+    drawSpecific(value1, 0);
+    drawSpecific(value2, 1);
+    drawSpecific(value1, 2);
+    drawSpecific(value1, 3);
+
+}
+
+
 void Hand::draw(int numCards) {
     for (int i = 0; i < numCards; i++) {
         this->cards.emplace_back(std::move(parentDeck->cards.back()));
@@ -21,8 +33,10 @@ void Hand::drawSpecific(int value, int suit) {
     int size = parentDeck->getCurrentSize();
     for (int i = 0; i < size; i++) {
         if ((parentDeck->cards[i]->getValue() == value) && (parentDeck->cards[i]->getSuit() == suit)) {
-            this->cards.emplace_back(std::move(parentDeck->cards[i]));
-            parentDeck->cards.erase(this->cards.begin() + i);
+            std::rotate(parentDeck->cards.begin(), parentDeck->cards.begin() + (i + 1), parentDeck->cards.end());
+            this->cards.emplace_back(std::move(parentDeck->cards.back()));
+            parentDeck->cards.pop_back();
+            std::rotate(parentDeck->cards.begin(), parentDeck->cards.begin() + (parentDeck->getCurrentSize() - i), parentDeck->cards.end());
             break;
         }
     }
