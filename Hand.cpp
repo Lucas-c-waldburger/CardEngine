@@ -22,6 +22,10 @@ Hand::Hand(int maxSize, Deck& deck, DiscardPile& discardPile, int value1, int va
 
 }
 
+void Hand::draw() {
+    this->cards.emplace_back(std::move(parentDeck->cards.back()));
+    parentDeck->cards.pop_back();
+}
 
 void Hand::draw(int numCards) {
     for (int i = 0; i < numCards; i++) {
@@ -89,12 +93,28 @@ void Hand::replaceInPlace(int value, int suit) {
     int size = getCurrentSize();
     for (int i = 0; i < size; i++) {
         if ((this->cards[i]->getValue() == value) && (this->cards[i]->getSuit() == suit)) {
-            std::rotate(this->cards.begin(), this->cards.begin() + (i + 1), this->cards.end());
+            draw();
+            std::swap(this->cards[i], cards[getCurrentSize() - 1]);
             parentDiscardPile->cards.emplace_back(std::move(this->cards.back()));
             this->cards.pop_back();
-            this->cards.emplace_back(std::move(parentDeck->cards.back()));
-            std::rotate(this->cards.begin(), this->cards.end() - (i + 1), this->cards.end());
             break;
         }
     }
 }
+
+
+
+void Hand::chooseHolds() {
+    int size = getCurrentSize();
+    for (int i = 0; i < size; i++) {
+        char hold;
+        std::cout << "Card (" << this->cards[i]->getValue() << ", " << this->cards[i]->getSuit() << ")\n";
+        std::cout << "Hold? (Y/N): ";
+        std::cin >> hold;
+
+        if (hold == 'N') {
+            replaceInPlace(this->cards[i]->getValue(), this->cards[i]->getSuit());
+        }
+    }
+}
+

@@ -52,9 +52,7 @@ bool WinState::checkFlush() {
 
 int WinState::getState() {
     int orderedState = determineOrderedWinState();
-    std::cout << "ordered state: " << orderedState << '\n';
     int multiplesState = determineMultiplesWinState();
-    std::cout << "multiples state: " << multiplesState << '\n';
     if (orderedState > multiplesState) {
         return orderedState;
     }
@@ -86,7 +84,7 @@ int WinState::determineMultiplesWinState() {
             }
             else {
                 // if only 3 in row, checks if last two cards are a different pair for full house
-                if (cardValues[firstPairIndex + 3] == cardValues[firstPairIndex + 4]) {
+                if (cardValues[3] == cardValues[4]) {
                     return fullHouse;
                 }
                     // if last two cards not a pair, we know it's three of a kind

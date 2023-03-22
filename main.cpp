@@ -65,26 +65,42 @@ int main() {
 //    }
 //    std::cout << "---------------------" << '\n';
 //
-    Hand hand(5, deck, discardPile);
-    WinState winState;
-    int winResult;
-    for (int n = 0; n < 1000; n++) {
-        hand.discardAll();
-        discardPile.shuffleBackIntoDeck();
-        hand.drawTilFull();
-        winState = WinState(hand);
-        winResult = winState.getState();
-        if (winResult >= flush) {
-            for (int i = 0; i < hand.getCurrentSize(); i++) {
-                std::cout << hand.cards[i]->getValue() << ", " << hand.cards[i]->getSuit() << '\n';
-            }
-            std::cout << "------" << '\n';
-            std::cout << getStateAlpha(winResult) << '\n';
-            std::cout << "---------------------" << '\n';
-        }
+//    Hand hand(5, deck, discardPile);
+//    WinState winState;
+//    int winResult;
+//    for (int n = 0; n < 100000; n++) {
+//        hand.discardAll();
+//        discardPile.shuffleBackIntoDeck();
+//        hand.drawTilFull();
+//        winState = WinState(hand);
+//        winResult = winState.getState();
+//        if (winResult >= straightFlush) {
+//            for (int i = 0; i < hand.getCurrentSize(); i++) {
+//                std::cout << hand.cards[i]->getValue() << ", " << hand.cards[i]->getSuit() << '\n';
+//            }
+//            std::cout << "------" << '\n';
+//            std::cout << getStateAlpha(winResult) << '\n';
+//            std::cout << "---------------------" << '\n';
+//        }
+//    }
+
+    Hand playerHand(5, deck, discardPile);
+    for (int i = 0; i < playerHand.getStartingSize(); i++) {
+        playerHand.print();
+        playerHand.discard(playerHand.cards[playerHand.getCurrentSize()-1]->getValue(),
+                           playerHand.cards[playerHand.getCurrentSize()-1]->getSuit());
     }
 
-
+//    std::cout << "------" << '\n';
+//    playerHand.chooseHolds();
+//    std::cout << "------" << '\n';
+//    playerHand.print();
+//
+//    WinState winState = WinState(playerHand);
+//    int winResult = winState.getState();
+//    std::cout << "------" << '\n';
+//    std::cout << getStateAlpha(winResult) << '\n';
+//    std::cout << "---------------------" << '\n';
 
 
 

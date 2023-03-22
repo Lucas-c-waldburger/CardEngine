@@ -16,13 +16,15 @@ public:
     Deck* parentDeck;
     DiscardPile* parentDiscardPile;
 
-    void draw(int numCards = 1);
+    void draw();
+    void draw(int numCards);
     void drawSpecific(int value, int suit);
     void drawTilFull();
     void discard(int value, int suit);
     void discardRand(int numCards = 1);
     void discardAll();
     void replaceInPlace(int value, int suit);
+    void chooseHolds();
 
 };
 
