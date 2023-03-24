@@ -1,7 +1,3 @@
-//
-// Created by Lower School Music on 3/24/23.
-//
-
 #include "Credits.h"
 
 Credits::Credits() {
@@ -18,6 +14,10 @@ void Credits::setAmount(int newAmount) {
     amount = newAmount;
 }
 
+bool Credits::operator==(const int &otherAmount) const {
+    return (amount == otherAmount);
+}
+
 std::strong_ordering Credits::operator<=>(const int &otherAmount) const {
     return amount <=> otherAmount;
 }
@@ -31,3 +31,4 @@ Credits& Credits::operator-=(const int& otherAmount) {
     amount -= otherAmount;
     return *this;
 }
+

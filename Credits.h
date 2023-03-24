@@ -15,6 +15,7 @@ public:
     int getAmount();
     void setAmount(int newAmount);
 
+    bool operator==(const int& otherAmount) const;
     std::strong_ordering operator<=>(const int& otherAmount) const;
     Credits& operator+=(const int& otherAmount);
     Credits& operator-=(const int& otherAmount);
