@@ -3,4 +3,4 @@ project(CardEngine)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(CardEngine main.cpp CardGroup.h Card.cpp CardArt.cpp CardGroup.cpp Deck.cpp Hand.cpp WinState.h WinState.cpp DiscardPile.h DiscardPile.cpp ArtFiles.cpp ArtFiles.h)
+add_executable(CardEngine main.cpp CardGroup.h Card.cpp CardArt.cpp CardGroup.cpp Deck.cpp Hand.cpp WinState.h WinState.cpp DiscardPile.h DiscardPile.cpp ArtFiles.cpp ArtFiles.h Credits.cpp Credits.h)

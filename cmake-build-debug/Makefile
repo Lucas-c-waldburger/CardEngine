@@ -225,6 +225,30 @@ CardGroup.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CardEngine.dir/build.make CMakeFiles/CardEngine.dir/CardGroup.cpp.s
 .PHONY : CardGroup.cpp.s
 
+Credits.o: Credits.cpp.o
+.PHONY : Credits.o
+
+# target to build an object file
+Credits.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CardEngine.dir/build.make CMakeFiles/CardEngine.dir/Credits.cpp.o
+.PHONY : Credits.cpp.o
+
+Credits.i: Credits.cpp.i
+.PHONY : Credits.i
+
+# target to preprocess a source file
+Credits.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CardEngine.dir/build.make CMakeFiles/CardEngine.dir/Credits.cpp.i
+.PHONY : Credits.cpp.i
+
+Credits.s: Credits.cpp.s
+.PHONY : Credits.s
+
+# target to generate assembly for a file
+Credits.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CardEngine.dir/build.make CMakeFiles/CardEngine.dir/Credits.cpp.s
+.PHONY : Credits.cpp.s
+
 Deck.o: Deck.cpp.o
 .PHONY : Deck.o
 
@@ -366,6 +390,9 @@ help:
 	@echo "... CardGroup.o"
 	@echo "... CardGroup.i"
 	@echo "... CardGroup.s"
+	@echo "... Credits.o"
+	@echo "... Credits.i"
+	@echo "... Credits.s"
 	@echo "... Deck.o"
 	@echo "... Deck.i"
 	@echo "... Deck.s"

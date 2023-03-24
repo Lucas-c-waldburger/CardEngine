@@ -102,6 +102,12 @@
 		<Unit filename="/Users/lowerschoolmusic/Desktop/CardEngine/CardGroup.h">
 			<Option target="CardEngine"/>
 		</Unit>
+		<Unit filename="/Users/lowerschoolmusic/Desktop/CardEngine/Credits.cpp">
+			<Option target="CardEngine"/>
+		</Unit>
+		<Unit filename="/Users/lowerschoolmusic/Desktop/CardEngine/Credits.h">
+			<Option target="CardEngine"/>
+		</Unit>
 		<Unit filename="/Users/lowerschoolmusic/Desktop/CardEngine/Deck.cpp">
 			<Option target="CardEngine"/>
 		</Unit>

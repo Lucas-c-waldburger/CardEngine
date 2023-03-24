@@ -2,6 +2,7 @@
 #include "Deck.h"
 #include "Hand.h"
 #include "WinState.h"
+#include "Credits.h"
 
 
 
@@ -34,9 +35,15 @@ std::string getStateAlpha(int state) {
 int main() {
     std::string filepath = "/Users/lowerschoolmusic/Desktop/CardEngine/CardImages";
     ArtFiles artFiles = ArtFiles(filepath);
-    Deck deck(52);
-    std::cout << deck.cards[0]->getValue() << ", " << deck.cards[0]->getSuit() << '-' << deck.cards[0]->getArtFilename();
-    DiscardPile discardPile(deck.getStartingSize(), deck);
+//    Deck deck(52);
+//    std::cout << deck.cards[0]->getValue() << ", " << deck.cards[0]->getSuit() << '-' << deck.cards[0]->getArtFilename();
+//    DiscardPile discardPile(deck.getStartingSize(), deck);
+
+    Credits playerCredits = Credits(10);
+    std::cout << playerCredits.getAmount() << '\n';
+    playerCredits += 2;
+    std::cout << playerCredits.getAmount() << '\n';
+
 //
 //    Hand p1Hand(5, deck, discardPile, 11, 9, 10, 8, 12, 2, 0, 0, 0, 0);
 //
