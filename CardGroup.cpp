@@ -89,9 +89,9 @@ void CardGroup::orderByBoth() {
     }
 }
 
-void CardGroup::print() {
-    int size = getCurrentSize();
-    for (int i = 0; i < size; i++) {
-        std::cout << *cards[i] << '\n';
-    }
-}
+//void CardGroup::print() {
+//    int size = getCurrentSize();
+//    for (int i = 0; i < size; i++) {
+//        std::cout << *cards[i] << '\n';
+//    }
+//}

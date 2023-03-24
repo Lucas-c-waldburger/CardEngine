@@ -4,7 +4,6 @@
 //
 
 #include "Card.h"
-#include "CardArt.h"
 #include <iostream>
 
 
@@ -14,7 +13,7 @@ Card::Card(int value, int suit) {
     this->value = value;
     this->suit = suit;
     this->color = determineColor();
-    this->art = CardArt::arts[value-2][suit];
+    this->artFilename = ArtFiles::artFilenames[value-2][suit];
 }
 
 int Card::getValue() const {
@@ -24,7 +23,7 @@ int Card::getValue() const {
 void Card::setValue(int value, bool update) {
     this->value = value;
     if (update) {
-        updateArt();
+        updateArtFilenameFromMatrix();
     }
 }
 
@@ -35,7 +34,7 @@ int Card::getSuit() const {
 void Card::setSuit(int suit, bool update) {
     this->suit = suit;
     if (update) {
-        updateArt();
+        updateArtFilenameFromMatrix();
     }
 }
 
@@ -58,19 +57,16 @@ std::string Card::determineColor() {
 }
 
 
-std::string Card::getArt() {
-    return art;
+std::string Card::getArtFilename() {
+    return artFilename;
 }
 
-void Card::setArt(std::string cardArt) {
-    this->art = cardArt;
+void Card::setArtFilename(std::string artFilename) {
+    this->artFilename = artFilename;
 }
 
-void Card::updateArt() {
-    this->art = CardArt::arts[value-2][suit];
+void Card::updateArtFilenameFromMatrix() {
+    this->artFilename = ArtFiles::artFilenames[value-2][suit];
 }
 
-std::ostream &operator<<(std::ostream &stream, const Card &card) {
-    stream << card.art;
-    return stream;
-}
+

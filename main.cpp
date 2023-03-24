@@ -4,27 +4,6 @@
 #include "WinState.h"
 
 
-void testDiscard(Hand& hand) {
-    int cardValue;
-    int cardSuit;
-    hand.print();
-    std::cout << "Choose a card to discard: ";
-    std::cin >> cardValue >> cardSuit;
-    hand.replaceInPlace(cardValue, cardSuit);
-    std::cout << '\n';
-    hand.print();
-}
-
-void testDraw(Hand& hand) {
-    int cardValue;
-    int cardSuit;
-    hand.print();
-    std::cout << "Choose a card to draw: ";
-    std::cin >> cardValue >> cardSuit;
-    hand.drawSpecific(cardValue, cardSuit);
-    std::cout << '\n';
-    hand.print();
-}
 
 std::string getStateAlpha(int state) {
     if (state == royalFlush) {
@@ -53,8 +32,10 @@ std::string getStateAlpha(int state) {
 
 
 int main() {
-    CardArt cardArt;
+    std::string filepath = "/Users/lowerschoolmusic/Desktop/CardEngine/CardImages";
+    ArtFiles artFiles = ArtFiles(filepath);
     Deck deck(52);
+    std::cout << deck.cards[0]->getValue() << ", " << deck.cards[0]->getSuit() << '-' << deck.cards[0]->getArtFilename();
     DiscardPile discardPile(deck.getStartingSize(), deck);
 //
 //    Hand p1Hand(5, deck, discardPile, 11, 9, 10, 8, 12, 2, 0, 0, 0, 0);
@@ -84,12 +65,12 @@ int main() {
 //        }
 //    }
 
-    Hand playerHand(5, deck, discardPile);
-    for (int i = 0; i < playerHand.getStartingSize(); i++) {
-        playerHand.print();
-        playerHand.discard(playerHand.cards[playerHand.getCurrentSize()-1]->getValue(),
-                           playerHand.cards[playerHand.getCurrentSize()-1]->getSuit());
-    }
+//    Hand playerHand(1, deck, discardPile);
+//    for (int i = 0; i < 5; i++) {
+//
+//        playerHand.drawSpecific(playerHand.cards[playerHand.getCurrentSize()-1]->getValue()+1,
+//                           playerHand.cards[playerHand.getCurrentSize()-1]->getSuit());
+//    }
 
 //    std::cout << "------" << '\n';
 //    playerHand.chooseHolds();

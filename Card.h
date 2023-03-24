@@ -7,7 +7,7 @@
 
 
 #include <iostream>
-#include "CardArt.h"
+#include "ArtFiles.h"
 
 enum Suits {
     diamonds = 0,
@@ -34,9 +34,9 @@ public:
     int getSuit() const;
     void setSuit(int suit, bool update = false);
 
-    std::string getArt();
-    void setArt(std::string cardArt);
-    void updateArt();
+    std::string getArtFilename();
+    void setArtFilename(std::string artFilename);
+    void updateArtFilenameFromMatrix();
 
     std::string determineColor();
     std::string getColor() const;
@@ -46,9 +46,7 @@ private:
     int value;
     int suit;
     std::string color;
-    std::string art;
-
-    friend std::ostream& operator<<(std::ostream& stream, const Card& card);
+    std::string artFilename;
 
 };
 #endif //CARDENGINE_CARD_H

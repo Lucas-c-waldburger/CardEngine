@@ -129,6 +129,30 @@ CardEngine/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CardEngine.dir/build.make CMakeFiles/CardEngine.dir/build
 .PHONY : CardEngine/fast
 
+ArtFiles.o: ArtFiles.cpp.o
+.PHONY : ArtFiles.o
+
+# target to build an object file
+ArtFiles.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CardEngine.dir/build.make CMakeFiles/CardEngine.dir/ArtFiles.cpp.o
+.PHONY : ArtFiles.cpp.o
+
+ArtFiles.i: ArtFiles.cpp.i
+.PHONY : ArtFiles.i
+
+# target to preprocess a source file
+ArtFiles.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CardEngine.dir/build.make CMakeFiles/CardEngine.dir/ArtFiles.cpp.i
+.PHONY : ArtFiles.cpp.i
+
+ArtFiles.s: ArtFiles.cpp.s
+.PHONY : ArtFiles.s
+
+# target to generate assembly for a file
+ArtFiles.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CardEngine.dir/build.make CMakeFiles/CardEngine.dir/ArtFiles.cpp.s
+.PHONY : ArtFiles.cpp.s
+
 Card.o: Card.cpp.o
 .PHONY : Card.o
 
@@ -330,6 +354,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... CardEngine"
+	@echo "... ArtFiles.o"
+	@echo "... ArtFiles.i"
+	@echo "... ArtFiles.s"
 	@echo "... Card.o"
 	@echo "... Card.i"
 	@echo "... Card.s"

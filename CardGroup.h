@@ -29,7 +29,7 @@ public:
     void orderByValue();
     void orderByBoth();
 
-    void print();
+//    void print();
 
 private:
     int startingSize;
